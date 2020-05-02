@@ -1,13 +1,14 @@
 package model;
 
 public enum Day{
-	NULL (null),
+	NULL ("SIN DÍA"),
 	MONDAY ("LU"),
 	TUESTDAY ("MA"),
 	WEDNESDAY ("MI"),
 	THURSDAY ("JU"),
 	FRIDAY ("VI"),
-	SATURDAY ("SA");
+	SATURDAY ("SA"),
+	SUNDAY ("DO");
 	
 	private String shortName;
 	private Day(String sn) {
