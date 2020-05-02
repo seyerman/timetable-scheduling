@@ -25,7 +25,7 @@ public class Main {
 			ResourceAllocation ra = new ResourceAllocation(s);
 			ra.allocateResources();
 			List<TimeSlot> slots = ra.getTimeSlots();
-			Collections.sort(slots);
+			//Collections.sort(slots); //sort by day and size of slot
 			
 			String output = toString(slots);
 			

@@ -1,6 +1,7 @@
 package model;
 
 public enum Day{
+	NULL (null),
 	MONDAY ("LU"),
 	TUESTDAY ("MA"),
 	WEDNESDAY ("MI"),
@@ -19,10 +20,10 @@ public enum Day{
 	
 	public static Day valueOf2(String shortName) {
 		for (Day d:Day.values()) {
-			if(shortName.contentEquals(d.shortName)) {
+			if(d!=NULL && shortName.contentEquals(d.shortName)) {
 				return d;
-			}			
+			}
 		}
-		return null;
+		return NULL;
 	}
 }

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,7 @@ public class ResourceAllocation {
 			Collection<ClassSession> cs = createSession(session);
 			sessionSchedule.addAll(cs);
 		}
+		Collections.sort(sessionSchedule);
 	}
 	
 	private Collection<ClassSession> createSession(Map<String, String> session) {
@@ -46,17 +48,22 @@ public class ResourceAllocation {
 	
 	public void allocateResources() {
 		timeSlots = new ArrayList<>();
-		
+		//PrintWriter pw = new PrintWriter("data/debug.txt");
 		for (ClassSession cs1: sessionSchedule) {
-			System.out.print(cs1.getCourseCode());
+			//System.out.print(cs1.getCourseCode());
 			TimeSlot timeSlotChoosed = null;
 			for (TimeSlot ts: timeSlots) {
 				Collection<ClassSession> sessions = ts.getSessions();
 				for (ClassSession cs2: sessions) {
-					if(cs1.crossSchedules(cs2)) {
+					//pw.write(cs2.getDay().getShortName()+cs2.getCourseCode()+":"+cs2.getStart()+"-"+cs2.getEnd());
+					//pw.write("x");
+					//pw.write(cs1.getDay().getShortName()+cs1.getCourseCode()+":"+cs1.getStart()+"-"+cs1.getEnd());
+					if(cs2.crossSchedules(cs1)) {
+						//pw.write(" crossed\n");
 						timeSlotChoosed = ts;
 						break;
-					}					
+					}
+					//pw.write(" no cross\n");
 				}
 				if(timeSlotChoosed!=null) {
 					break;
@@ -64,15 +71,16 @@ public class ResourceAllocation {
 			}
 			if(timeSlotChoosed!=null) {
 				timeSlotChoosed.getSessions().add(cs1);
-				System.out.println(" added to an existing slot "+timeSlotChoosed.getDay()+" "+timeSlotChoosed.getId()+":"+timeSlotChoosed.getSessions().size());
+				//System.out.println(" added to an existing slot "+timeSlotChoosed.getDay()+" "+timeSlotChoosed.getId()+":"+timeSlotChoosed.getSessions().size());
 			}else {
 				Collection<ClassSession> sessions = new ArrayList<>();
 				sessions.add(cs1);
 				timeSlotChoosed = new TimeSlot(timeSlots.size(),cs1.getDay(), sessions);
 				timeSlots.add(timeSlotChoosed);
-				System.out.println(" added to a new slot "+timeSlots.size());
+				//System.out.println(" added to a new slot "+timeSlots.size());
 			}
 		}
+		//pw.close();
 	}
 	
 	public List<TimeSlot> getTimeSlots(){

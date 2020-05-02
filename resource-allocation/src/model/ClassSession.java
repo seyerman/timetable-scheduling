@@ -27,6 +27,10 @@ public class ClassSession implements Comparable<ClassSession>{
 		courseCode = cc;
 		additionalInfo = info;
 	}
+	
+	public int duration() {
+		return end-start;
+	}
 
 	public Day getDay() {
 		return dayOfWeek;
@@ -52,7 +56,20 @@ public class ClassSession implements Comparable<ClassSession>{
 		return courseCode+":"+start+"-"+end;
 	}
 	
+	//special cross validation
 	public boolean crossSchedules(ClassSession other) {
+		if(dayOfWeek!=other.dayOfWeek) {
+			return false;
+		}else {
+			if((duration()<300 && other.duration()<300) || (duration()>=300 && other.duration()>=300)) {
+				return start==other.start || (start<other.start && other.end<=end);
+			}else {
+				return false;
+			}
+		}
+	}
+
+	public boolean fullCrossSchedules(ClassSession other) {
 		if(dayOfWeek!=other.dayOfWeek) {
 			return false;
 		}else {
@@ -62,7 +79,13 @@ public class ClassSession implements Comparable<ClassSession>{
 
 	@Override
 	public int compareTo(ClassSession other) {
-		return (end-start)-(other.end-other.start);
+		if(dayOfWeek!=other.dayOfWeek) {
+			return dayOfWeek.compareTo(other.dayOfWeek);
+		}else if(start!=other.start){
+			return start-other.start;
+		}else {
+			return other.end-end;//I want the biggest session is first
+		}
 	}
 	
 	public boolean equals(ClassSession other) {

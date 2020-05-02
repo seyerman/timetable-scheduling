@@ -37,7 +37,7 @@ public class TimeSlot implements Comparable<TimeSlot>{
 	public String toString() {
 		String dayStr = day==null?null:day.getShortName();
 		String msg = "";
-		//msg += id+ScheduleFileReader.LINE_SEPARATOR;
+		msg += id+ScheduleFileReader.LINE_SEPARATOR;
 		msg += sessions.size()+ScheduleFileReader.LINE_SEPARATOR;
 		msg += dayStr;
 		for (ClassSession cs:sessions) {
