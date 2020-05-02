@@ -5,8 +5,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import ui.ScheduleFileReader;
 
@@ -50,21 +48,29 @@ public class ResourceAllocation {
 		timeSlots = new ArrayList<>();
 		
 		for (ClassSession cs1: sessionSchedule) {
+			System.out.print(cs1.getCourseCode());
 			TimeSlot timeSlotChoosed = null;
 			for (TimeSlot ts: timeSlots) {
-				ClassSession cs2 = ts.getSessions().last();
-				if(cs1.crossSchedules(cs2)) {
-					timeSlotChoosed = ts;
+				Collection<ClassSession> sessions = ts.getSessions();
+				for (ClassSession cs2: sessions) {
+					if(cs1.crossSchedules(cs2)) {
+						timeSlotChoosed = ts;
+						break;
+					}					
+				}
+				if(timeSlotChoosed!=null) {
 					break;
 				}
 			}
 			if(timeSlotChoosed!=null) {
 				timeSlotChoosed.getSessions().add(cs1);
+				System.out.println(" added to an existing slot "+timeSlotChoosed.getDay()+" "+timeSlotChoosed.getId()+":"+timeSlotChoosed.getSessions().size());
 			}else {
-				SortedSet<ClassSession> sessions = new TreeSet<>();
+				Collection<ClassSession> sessions = new ArrayList<>();
 				sessions.add(cs1);
-				timeSlotChoosed = new TimeSlot(cs1.getDay(), sessions);
+				timeSlotChoosed = new TimeSlot(timeSlots.size(),cs1.getDay(), sessions);
 				timeSlots.add(timeSlotChoosed);
+				System.out.println(" added to a new slot "+timeSlots.size());
 			}
 		}
 	}

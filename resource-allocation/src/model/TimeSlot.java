@@ -1,20 +1,25 @@
 package model;
 
-import java.util.SortedSet;
+import java.util.Collection;
 
 import ui.ScheduleFileReader;
 
 public class TimeSlot implements Comparable<TimeSlot>{
+	private int id;
 	private Day day;
-	private SortedSet<ClassSession> sessions;
-	public TimeSlot(Day day, SortedSet<ClassSession> sessions) {
+	private Collection<ClassSession> sessions;
+	public TimeSlot(int id, Day day, Collection<ClassSession> sessions) {
+		this.id = id;
 		this.day = day;
 		this.sessions = sessions;
+	}
+	public int getId() {
+		return id;
 	}
 	public Day getDay() {
 		return day;
 	}
-	public SortedSet<ClassSession> getSessions() {
+	public Collection<ClassSession> getSessions() {
 		return sessions;
 	}
 	@Override
@@ -31,7 +36,10 @@ public class TimeSlot implements Comparable<TimeSlot>{
 	}
 	public String toString() {
 		String dayStr = day==null?null:day.getShortName();
-		String msg = ""+dayStr;
+		String msg = "";
+		//msg += id+ScheduleFileReader.LINE_SEPARATOR;
+		msg += sessions.size()+ScheduleFileReader.LINE_SEPARATOR;
+		msg += dayStr;
 		for (ClassSession cs:sessions) {
 			msg += ScheduleFileReader.LINE_SEPARATOR + cs.toString();
 		}
