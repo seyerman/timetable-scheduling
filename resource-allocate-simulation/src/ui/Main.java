@@ -62,15 +62,19 @@ public class Main {
 				
 				Schedule s = ScheduleFileReader.readSchedule(inputName, ScheduleFileReader.LINE_SEPARATOR);
 				
-				ResourceAllocateSimulation ra = new ResourceAllocateSimulation(s);
-				ra.simulate();
-				List<Resource> resources = ra.getResources();
-				
-				String output = toString(resources);
-				
-				PrintWriter pw = new PrintWriter(outputName);
-				pw.write(output);
-				pw.close();
+				if(s==null) {
+					System.out.println(inputName+" has no data");
+				}else {
+					ResourceAllocateSimulation ra = new ResourceAllocateSimulation(s);
+					ra.simulate();
+					List<Resource> resources = ra.getResources();
+					
+					String output = toString(resources);
+					
+					PrintWriter pw = new PrintWriter(outputName);
+					pw.write(output);
+					pw.close();
+				}
 			}
 		}
 	}

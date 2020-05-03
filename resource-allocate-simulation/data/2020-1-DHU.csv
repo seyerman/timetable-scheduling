@@ -1,0 +1,61 @@
+﻿SISTEMA DE REGISTRO ACADÉMICO DE PREGRADO
+Listado de horarios por departamento académico
+Período académico;202010
+Desarrollo Humano
+
+CODIGO_MATERIA;NOMBRE_MATERIA;CREDITOS;GRUPO;NRC;TIPO HORARIO;JORNADA;IDIOMA;CURSO E;TITULAR;ESCONDIDO;CEDULA_PROFESOR;ID_PROFESOR;NOMBRE_PROFESOR;SEMANA_INICIO;SEMANA_FIN;HORAS_PAGADAS;% RESPONSABILIDAD;DIAS;HORARIO;SALON;DEMANDA;OFERTA
+DHU - 20069;Cine en casa;0;001;11669;TEO;D;ESP;N;P;N;94389359 ;A00033580 ;VICTOR HUGO FERNANDEZ PIEDRAHITA ;1;16;0;100;MI;1700 - 2059;AD-VA    D;0;60
+DHU - 20018;Comité de Bienestar Universitario;0;001;11055;TEO;N;ESP;N;P;N;10487786 ;A00222740 ;PABLO ALBERTO ROA GONZALEZ ;3;16;0;100;MA;1700 - 1859;202E    E;93;30
+DHU - 20066;Comité de prevención consumo de psicoactivos;0;001;11117;TEO;D;ESP;N;S;N;;;____________________________________________;3;14;0;;MI;1200 - 1359;204C    C;0;30
+DHU - 20056;Consejería psicológica;0;001;11068;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;LU-MA-MI-JU-VI;0800 - 1659;    ;0;100
+DHU - 20056;Consejería psicológica;0;003;11570;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;LU-MA-MI-JU-VI;0800 - 1659;    ;276;30
+DHU - 20063;Conversatorios sobre las relaciones y el amor;0;001;11069;TEO;D;ESP;N;S;N;;;____________________________________________;10;10;0;;VI;1100 - 1259;AD-VA    D;0;60
+DHU - 20063;Conversatorios sobre las relaciones y el amor;0;001;11069;TEO;D;ESP;N;S;N;;;____________________________________________;3;3;0;;VI;1100 - 1259;AD-VA    D;0;60
+DHU - 20063;Conversatorios sobre las relaciones y el amor;0;001;11069;TEO;D;ESP;N;S;N;;;____________________________________________;9;9;0;;VI;1100 - 1259;AD-VA    D;0;60
+DHU - 20063;Conversatorios sobre las relaciones y el amor;0;001;11069;TEO;D;ESP;N;S;N;;;____________________________________________;4;4;0;;VI;1100 - 1259;AD-VA    D;0;60
+DHU - 20064;Entrenamiento para la vida – Experiencia de inmersión;0;001;12004;TEO;D;ESP;N;S;N;;;____________________________________________;4;6;1.5;;MA;1600 - 1729;209C    C;0;30
+DHU - 20036;Estás en casa;0;001;11059;TEO;D;ESP;N;P;N;94389359 ;A00033580 ;VICTOR HUGO FERNANDEZ PIEDRAHITA ;1;16;2;100;MI;1200 - 1359;    ;0;100
+DHU - 20036;Estás en casa;0;003;11060;TEO;D;ESP;N;P;N;94389359 ;A00033580 ;VICTOR HUGO FERNANDEZ PIEDRAHITA ;1;16;2;100;JU;1200 - 1359;    ;0;100
+DHU - 20036;Estás en casa;0;005;11061;TEO;D;ESP;N;P;N;94389359 ;A00033580 ;VICTOR HUGO FERNANDEZ PIEDRAHITA ;1;16;2;100;MA;1200 - 1359;    ;0;100
+DHU - 20052;Fortaleciendo mi yo;0;001;12007;TEO;D;ESP;N;S;N;;;____________________________________________;3;5;0;;SA;1100 - 1259;204C    C;0;30
+DHU - 20013;Hábitos de estudio;0;001;11054;TEO;D;ESP;N;S;N;;;____________________________________________;4;4;0;;SA;1000 - 1259;AD-VA    D;23;60
+DHU - 20039;Inducción primer semestre;0;001;11064;TEO;D;ESP;N;S;N;;;____________________________________________;1;1;0;;MA;0800 - 1759;    ;0;999
+DHU - 20062;Manejo de emociones;0;001;11664;TEO;D;ESP;N;P;N;88274962 ;A00353099 ;ALVARO ENRIQUE SALAZAR APONTE ;4;5;0;100;MI;1600 - 1759;308D    D;0;30
+DHU - 20054;Mindfulness, atención y concentración;0;001;11067;TEO;D;ESP;N;P;N;14620949 ;A00290520 ;ALVARO IVAN VALENCIA ZULUAGA ;2;8;2;100;JU;1700 - 1859;204C    C;39;30
+DHU - 20038;Programa de acompañamiento académico a Becarios;0;001;11579;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;MI;1400 - 1759;    ;0;500
+DHU - 20023;Programa de nutrición;0;001;11572;TEO;D;ESP;N;S;N;;;____________________________________________;2;10;2;;MA;1200 - 1359;    ;0;999
+DHU - 20005;Programa de prevención del consumo y abuso de alcohol y psicoactivos;0;001;11051;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;8;;MA-JU;0800 - 1159;    ;776;999
+DHU - 20021;Programa de prevención en salud;0;001;11056;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;LU;0700 - 1159;    ;0;999
+DHU - 20021;Programa de prevención en salud;0;003;11057;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;MI-JU;0800 - 1259;    ;0;999
+DHU - 20021;Programa de prevención en salud;0;005;11058;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;MI-JU;0730 - 1629;    ;0;999
+DHU - 20037;Proyecto Colibrí - Nutrición;0;001;11062;TEO;D;ESP;N;P;N;45435760 ;A00153160 ;ADELA ISABEL HERRERA GENES ;2;16;6;100;MA;0800 - 1059;    ;0;300
+DHU - 20037;Proyecto Colibrí - Nutrición;0;001;11062;TEO;D;ESP;N;P;N;45435760 ;A00153160 ;ADELA ISABEL HERRERA GENES ;2;16;6;100;VI;0800 - 1059;    ;0;300
+DHU - 20037;Proyecto Colibrí - Nutrición;0;003;11063;TEO;D;ESP;N;P;N;37723289 ;A00102944 ;ADRIANA MARCELA RODRIGUEZ CARDOZO ;2;16;6;100;MA;1100 - 1359;PEN    ZC;0;30
+DHU - 20037;Proyecto Colibrí - Nutrición;0;003;11063;TEO;D;ESP;N;P;N;37723289 ;A00102944 ;ADRIANA MARCELA RODRIGUEZ CARDOZO ;2;16;6;100;VI;1400 - 1659;104A    A;0;30
+DHU - 20002;Proyecto ÍCARO-Curso formal de metodologías de aprendizaje;0;001;11122;TEO;D;ESP;N;S;N;;;____________________________________________;1;10;0;;SA;0900 - 1359;301L    L;66;0
+DHU - 20002;Proyecto ÍCARO-Curso formal de metodologías de aprendizaje;0;003;11123;TEO;D;ESP;N;S;N;;;____________________________________________;1;10;0;;SA;0900 - 1359;302L    L;29;38
+DHU - 20002;Proyecto ÍCARO-Curso formal de metodologías de aprendizaje;0;005;11726;TEO;D;ESP;N;S;N;;;____________________________________________;1;10;0;;SA;0900 - 1359;303L    L;23;38
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;015;12250;TEO;D;ESP;N;P;N;88274962 ;A00353099 ;ALVARO ENRIQUE SALAZAR APONTE ;1;16;0;100;LU;1100 - 1259;405L    L;39;42
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;003;11126;TEO;D;ESP;N;P;N;66709407 ;A00287752 ;ANA CRISTINA MARIN FERNANDEZ ;1;16;0;100;DO;0600 - 0729;    ;9;0
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;007;12006;TEO;D;ESP;N;P;N;66999354 ;A00348859 ;ANGELICA MARIA OSORIO GONZALEZ ;1;12;0;100;LU;1100 - 1259;307C    C;39;40
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;009;12247;TEO;D;ESP;N;P;N;1143933677 ;A00353080 ;ELFRIET HARANY CALDERON RUIZ ;1;16;0;100;MI;1100 - 1259;207L    L;44;40
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;013;12249;TEO;D;ESP;N;P;N;1143933677 ;A00353080 ;ELFRIET HARANY CALDERON RUIZ ;1;16;0;100;LU;0900 - 1059;405L    L;42;42
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;011;12248;TEO;D;ESP;N;P;N;31862759 ;A00030932 ;MARIA LILIANA ALVAREZ LAMIR ;1;16;0;100;VI;1100 - 1259;206C    C;35;40
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;001;11581;TEO;D;ESP;N;P;N;94389359 ;A00033580 ;VICTOR HUGO FERNANDEZ PIEDRAHITA ;1;16;0;100;VI;1100 - 1259;204C    C;30;30
+DHU - 20053;Proyecto Papiro - Programa de acompañamiento estudiantil;0;005;12005;TEO;D;ESP;N;P;N;1130616146 ;A00366824 ;WENDY CAROLINA LENIS GOMEZ ;1;12;0;100;LU;0900 - 1059;105A    A;39;40
+DHU - 20060;Proyecto PROBO;0;001;11124;TEO;D;ESP;N;P;N;88274962 ;A00353099 ;ALVARO ENRIQUE SALAZAR APONTE ;1;16;0;100;MA;0900 - 1059;304E    E;30;40
+DHU - 20060;Proyecto PROBO;0;007;11194;TEO;D;ESP;N;P;N;66709407 ;A00287752 ;ANA CRISTINA MARIN FERNANDEZ ;1;16;0;100;DO;1000 - 1129;    ;5;0
+DHU - 20060;Proyecto PROBO;0;005;11125;TEO;D;ESP;N;P;N;1144068456 ;A00353118 ;ANDREA STEFANIA MURIEL BENAVIDES ;1;16;0;100;JU;1400 - 1559;306L    L;37;40
+DHU - 20041;Proyectos - PSU;0;003;11118;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;0;;SA;0800 - 1159;104A    A;0;30
+DHU - 20041;Proyectos - PSU;0;005;11119;TEO;D;ESP;N;S;N;;;____________________________________________;4;16;0;;SA;0900 - 1159;105A    A;0;30
+DHU - 20041;Proyectos - PSU;0;001;11066;TEO;D;ESP;N;P;N;94389359 ;A00033580 ;VICTOR HUGO FERNANDEZ PIEDRAHITA ;1;16;0;100;SA;0800 - 1159;201E    E;0;30
+DHU - 20007;Salud sexual y reproductiva;0;001;11052;TEO;D;ESP;N;S;N;;;____________________________________________;4;13;4;;JU;0800 - 1159;    ;0;999
+DHU - 20026;Seguimiento académico a otros semestres;0;001;11580;TEO;D;ESP;N;S;N;;;____________________________________________;1;16;4;;JU;1400 - 1759;    ;205;200
+DHU - 20040;Seminarios PSU;0;001;11065;TEO;N;ESP;N;S;N;;;____________________________________________;13;16;0;;MA;1700 - 1959;AD-VA    D;0;60
+DHU - 20011;Taller de afrontamiento;0;001;11053;TEO;D;ESP;N;P;N;66709407 ;A00287752 ;ANA CRISTINA MARIN FERNANDEZ ;1;16;0;100;MA;0900 - 1059;    ;269;80
+DHU - 20011;Taller de afrontamiento;0;003;11116;TEO;D;ESP;N;P;N;66709407 ;A00287752 ;ANA CRISTINA MARIN FERNANDEZ ;1;16;0;100;LU;1600 - 1859;    ;0;80
+DHU - 20011;Taller de afrontamiento;0;005;11193;TEO;D;ESP;N;P;N;66709407 ;A00287752 ;ANA CRISTINA MARIN FERNANDEZ ;1;16;0;100;VI;1600 - 1759;    ;0;80
+DHU - 20012;Taller de seguimiento primer semestre;0;001;11121;TEO;D;ESP;N;S;N;;;____________________________________________;4;4;0;;LU-MA-MI-JU-VI;0700 - 1859;    ;0;999
+DHU - 20033;Talleres de Desarrollo Humano;0;001;11665;TEO;D;ESP;N;S;N;;;____________________________________________;2;14;0;;LU;1600 - 1859;405L    L;0;30
+DHU - 20065;Topacio - Formación de monitores;0;001;11115;TEO;D;ESP;N;S;N;;;____________________________________________;1;5;0;;VI;0800 - 1559;    ;0;70
+DHU - 20006;Vida universitaria;0;001;11120;TEO;D;ESP;N;S;N;;;____________________________________________;1;1;0;;MI;0800 - 1759;    ;0;999

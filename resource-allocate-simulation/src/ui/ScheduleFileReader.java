@@ -28,14 +28,22 @@ public class ScheduleFileReader {
 		
 		String source = br.readLine();
 		String reportType = br.readLine();
-		String academicPeriod = br.readLine().split(sep)[1];
+		String academicPeriod = br.readLine();
+		//String academicPeriod = br.readLine().split(sep)[1]; //sometimes is , the separator :(
 		String academicUnit = br.readLine();
 		
 		sch = new Schedule(source, reportType, academicPeriod, academicUnit);
 		
 		br.readLine();
 		
-		String titles[] = br.readLine().split(sep);
+		String line = br.readLine();
+		
+		if(line==null) {
+			br.close();
+			return null;
+		}
+		
+		String titles[] = line.split(sep);
 		Collection<String> titleColumns = new ArrayList<>();
 		
 		for (String t : titles) {
@@ -44,7 +52,7 @@ public class ScheduleFileReader {
 		
 		Collection<Map<String, String>> schedule = new ArrayList<>();
 		
-		String line = br.readLine();
+		line = br.readLine();
 		while(line!=null && !line.trim().equals("")) {
 			String[] stringValues = line.split(sep);
 			Map<String, String> values = new HashMap<>();

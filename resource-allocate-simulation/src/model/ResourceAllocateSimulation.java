@@ -53,9 +53,9 @@ public class ResourceAllocateSimulation {
 		List<SessionEvent> events = generateEvents();
 		Collections.sort(events);
 		
-		for (SessionEvent sessionEvent : events) {
-			System.out.println(sessionEvent);
-		}
+		//for (SessionEvent sessionEvent : events) {
+		//	System.out.println(sessionEvent);
+		//}
 		
 		resources = new ArrayList<>();
 		SortedSet<Resource> availableResources = new TreeSet<>();
