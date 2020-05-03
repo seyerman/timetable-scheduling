@@ -63,7 +63,7 @@ public class Session implements Comparable<Session>{
 	}
 
 	public String toString() {
-		return getFullCourseCode()+":"+getStart()+"-"+getEnd();
+		return getFullCourseCode()+":"+getStart()+":"+getEnd();
 	}
 	
 	//special cross validation
