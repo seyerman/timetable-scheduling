@@ -31,7 +31,7 @@ public class ScheduleFileReader {
 		String academicPeriod = br.readLine();
 		//String academicPeriod = br.readLine().split(sep)[1]; //sometimes is , the separator :(
 		String academicUnit = br.readLine();
-		
+
 		sch = new Schedule(source, reportType, academicPeriod, academicUnit);
 		
 		br.readLine();
