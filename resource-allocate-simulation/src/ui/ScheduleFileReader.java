@@ -52,6 +52,8 @@ public class ScheduleFileReader {
 		
 		Collection<Map<String, String>> schedule = new ArrayList<>();
 		
+		String shortAcademicUnit = "";
+		
 		line = br.readLine();
 		while(line!=null && !line.trim().equals("")) {
 			String[] stringValues = line.split(sep);
@@ -60,6 +62,11 @@ public class ScheduleFileReader {
 			for (int i = 0; i < stringValues.length; i++) {
 				values.put(titles[i], stringValues[i]);
 			}
+			
+			String academicUnitWithcourseCode = values.get(COURSE_CODE_COLUMN);
+			String[] parts = academicUnitWithcourseCode.split(COURSE_CODE_SEPARATOR);
+			shortAcademicUnit = parts[0];
+			
 			schedule.add(values);
 			line = br.readLine();
 		}
@@ -68,6 +75,7 @@ public class ScheduleFileReader {
 		
 		sch.setTitleColumns(titleColumns);
 		sch.setValueColumns(schedule);
+		sch.setShortAcademicUnit(shortAcademicUnit);
 		
 		return sch;
 	}

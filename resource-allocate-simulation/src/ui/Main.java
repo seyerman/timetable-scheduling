@@ -69,7 +69,7 @@ public class Main {
 					ra.simulate();
 					List<Resource> resources = ra.getResources();
 					
-					String output = toString(resources);
+					String output = toString(resources,s.getShortAcademicUnit());
 					
 					PrintWriter pw = new PrintWriter(outputName);
 					pw.write(output);
@@ -79,12 +79,12 @@ public class Main {
 		}
 	}
 	
-	public static String toString(List<Resource> resources) {
+	public static String toString(List<Resource> resources,String auShortName) {
 		String[] msg = new String[Day.values().length];
 		for (int i = 0; i < msg.length; i++) {
 			msg[i] = "";
 		}
-		msg[0] = "DAY;ZOOM-ID";
+		msg[0] = "DAY;ZOOM-ID;"+auShortName;
 		for(Resource res:resources) {
 			Day day = null;
 			for(Session s:res.getSessions()) {
