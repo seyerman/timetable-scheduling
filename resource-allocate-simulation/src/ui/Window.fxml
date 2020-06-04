@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <FlowPane prefWidth="457.0">
+         <children>
+            <SplitMenuButton mnemonicParsing="false" text="Elija un archivo de programación">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Elija un directorio de programaciones" />
+              </items>
+            </SplitMenuButton>
+            <Label />
+         </children>
+      </FlowPane>
+      <FlowPane prefWidth="200.0">
+         <children>
+            <SplitMenuButton mnemonicParsing="false" text="Elija el archivo de salida">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Elija el directorio de salida" />
+              </items>
+            </SplitMenuButton>
+         </children>
+      </FlowPane>
+      <Button mnemonicParsing="false" text="Asignar Recursos" />
+      <ProgressBar prefWidth="500.0" progress="0.0" />
+      <Label />
+   </children>
+</VBox>
