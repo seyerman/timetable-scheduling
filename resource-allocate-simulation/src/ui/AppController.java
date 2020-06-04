@@ -9,6 +9,18 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import model.Day;
 import model.LogMessages;
 import model.Resource;
@@ -20,6 +32,7 @@ public class AppController {
 	
 	public static final String EXT_REQ = ".csv";
 	public static final String EXT_EXC = "_ALLOCATION_SIMULATED.csv";
+	public static final String EXT_DIR = "_output";
 
 	public void process(String[] args) throws IOException {
 		LogMessages.print(Arrays.toString(args));
@@ -39,7 +52,7 @@ public class AppController {
 				if(args.length>1) {
 					outDirStr = args[1];
 				}else {
-					outDirStr = f.getAbsolutePath()+"_output";
+					outDirStr = getOutputDirectoryName(f);
 				}
 				File[] files = f.listFiles();
 				for (int i = 0; i < files.length; i++) {
@@ -67,7 +80,6 @@ public class AppController {
 				inFileNames.add(inputfileName);
 				outFileNames.add(singleOutputFileName);
 			}				
-			
 			for(int i=0;i<inFileNames.size();i++) {
 				String inputName = inFileNames.get(i);
 				String outputName = outFileNames.get(i);
@@ -87,6 +99,12 @@ public class AppController {
 					pw.write(output);
 					pw.close();
 				}
+				if(progressBar!=null) {
+					progressBar.setProgress((double)i/inFileNames.size());
+				}
+			}
+			if(progressBar!=null) {
+				progressBar.setProgress(1);
 			}
 		}
 	}
@@ -138,4 +156,126 @@ public class AppController {
 		
 		return outFName;
 	}
+	
+	private String getOutputDirectoryName(File file) {
+		return file.getAbsolutePath()+EXT_DIR;
+	}
+	
+    @FXML
+    private Label labInputFile;
+
+    @FXML
+    private Label labOutputFile;
+    
+    @FXML
+    private ProgressBar progressBar;
+
+    @FXML
+    private Label labStateBar;
+    
+    private Stage thisStage;   
+    
+    public AppController(Stage st) {
+    	thisStage = st;
+    }
+    
+    public AppController() {
+    	thisStage = null;
+    }
+    
+    public void initialize() {
+    	//progressBar.setMinWidth(Double.MAX_VALUE);
+    	
+    	getWindow().widthProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				progressBar.setMinWidth(getWindow().getWidth());
+				progressBar.setMaxWidth(getWindow().getWidth());
+			}
+		});
+    }
+    
+    private Window getWindow() {
+    	return thisStage;
+    }
+
+    @FXML
+    public void chooseAInputFile(ActionEvent event) {
+    	FileChooser fc = new FileChooser();
+    	fc.getExtensionFilters().addAll(
+     	         new FileChooser.ExtensionFilter("Separado por "+ScheduleFileReader.LINE_SEPARATOR, "*.csv")
+    	         );
+    	File inputFile = fc.showOpenDialog(getWindow());
+    	if(inputFile!=null) {
+    		labInputFile.setText(inputFile.getAbsolutePath());
+    		if(labOutputFile.getText().isEmpty()) {
+    			labOutputFile.setText(getOutputFileName(inputFile));
+    		}
+    		getWindow().sizeToScene();
+    	}
+    }
+
+    @FXML
+    public void chooseAInputFolder(ActionEvent event) {
+    	DirectoryChooser dc = new DirectoryChooser();
+    	File inputDirectory = dc.showDialog(getWindow());
+    	if(inputDirectory!=null) {
+    		labInputFile.setText(inputDirectory.getAbsolutePath());
+    		if(labOutputFile.getText().isEmpty()) {
+    			labOutputFile.setText(getOutputDirectoryName(inputDirectory));
+    		}
+    		getWindow().sizeToScene();
+    	}
+    }
+
+    @FXML
+    public void chooseAOutputFile(ActionEvent event) {
+    	FileChooser fc = new FileChooser();
+    	fc.getExtensionFilters().addAll(
+      	         new FileChooser.ExtensionFilter("Separado por "+ScheduleFileReader.LINE_SEPARATOR, "*.csv")
+      	         );
+    	File outputFile = fc.showSaveDialog(getWindow());
+    	if(outputFile!=null) {
+    		labOutputFile.setText(outputFile.getAbsolutePath());
+    		getWindow().sizeToScene();
+    	}
+    }
+
+    @FXML
+    public void chooseAOutputFolder(ActionEvent event) {
+    	DirectoryChooser dc = new DirectoryChooser();
+    	File outputDirectory = dc.showDialog(getWindow());
+    	if(outputDirectory!=null) {
+    		labOutputFile.setText(outputDirectory.getAbsolutePath());
+    		getWindow().sizeToScene();
+    	}
+    }
+	
+    @FXML
+    public void allocateResources(ActionEvent event) {
+		new Thread() {
+			public void run() {
+		    	try {
+		    		process(new String[] {labInputFile.getText(),labOutputFile.getText()});
+		    		Platform.runLater(new Thread() {
+		    			public void run() {
+							setStatusBar("El proceso de asignación ha terminado");
+		    			}
+		    		});		    		
+		    	}catch (IOException e) {
+		    		Platform.runLater(new Thread() {
+		    			public void run() {
+							new Alert(Alert.AlertType.ERROR,"No fue posible leer el archivo de entrada");
+		    				
+		    			}
+		    		});
+				}
+			}
+		}.start();
+    }
+    
+    public void setStatusBar(String message) {
+    	labStateBar.setText(message);
+    }
 }
